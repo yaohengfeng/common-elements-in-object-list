@@ -10,11 +10,13 @@ import java.util.stream.Collectors;
 public class Main {
     // 请编写一个方法，获得a和b集合中的公共元素。
     public static Set<Person> commonElementsIn(List<Person> a, List<Person> b) {
-        return new HashSet<>(getIntersection(a, b));
+        return getIntersection(a, b);
     }
 
-    public static <T> List<T> getIntersection(List<T> list1, List<T> list2) {
-        return list1.stream().filter(t -> list2.contains(t)).collect(Collectors.toList());
+    public static <T> Set<T> getIntersection(List<T> list1, List<T> list2) {
+        HashSet<T> intersectionSet = new HashSet<>(list1);
+        intersectionSet.retainAll(list2);
+        return intersectionSet;
     }
 
     // Person类，如果两个Person对象的name相等，则认为这两个对象相等。
