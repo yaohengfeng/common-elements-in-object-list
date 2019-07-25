@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Arrays;
+import java.util.ArrayList;
 
 
 
@@ -12,8 +13,9 @@ public class Main {
     // 请编写一个方法，获得a和b集合中的公共元素。
     public static Set<Person> commonElementsIn(List<Person> a, List<Person> b) {
         Set<Person> commonSet = new HashSet<>();
-        a.retainAll(b);
-        commonSet.addAll(a);
+        ArrayList commonList = new ArrayList(a);
+        commonList.retainAll(new ArrayList(b));
+        commonSet.addAll(commonList);
         return commonSet;
     }
 
