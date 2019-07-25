@@ -6,17 +6,14 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Arrays;
 
+
+
 public class Main {
     // 请编写一个方法，获得a和b集合中的公共元素。
     public static Set<Person> commonElementsIn(List<Person> a, List<Person> b) {
         Set<Person> commonSet = new HashSet<>();
-        a.forEach(personA -> {
-            b.forEach(personB ->{
-                if (personA.equals(personB)) {
-                    commonSet.add(personA);
-                }
-            } );
-        });
+        a.retainAll(b);
+        commonSet.addAll(a);
         return commonSet;
     }
 
