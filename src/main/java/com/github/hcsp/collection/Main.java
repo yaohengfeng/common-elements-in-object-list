@@ -1,5 +1,6 @@
 package com.github.hcsp.collection;
 
+import java.lang.invoke.SerializedLambda;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -10,10 +11,10 @@ import java.util.Arrays;
 public class Main {
     // 请编写一个方法，获得a和b集合中的公共元素。
     public static Set<Person> commonElementsIn(List<Person> a, List<Person> b) {
-        List<Person> list1 = new ArrayList<>(a);
-        List<Person> list2 = new ArrayList<>(b);
-        list1.retainAll(list2);
-        return new HashSet<>(list1);
+        Set<Person> set1 = new HashSet<>(a);
+        Set<Person> set2 = new HashSet<>(b);
+        set1.retainAll(set2);
+        return new HashSet<>(set1);
     }
 
     // Person类，如果两个Person对象的name相等，则认为这两个对象相等。
