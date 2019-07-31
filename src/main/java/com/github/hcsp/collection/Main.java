@@ -12,10 +12,10 @@ public class Main {
     public static Set<Person> commonElementsIn(List<Person> a, List<Person> b) {
         Set<Person> set = new HashSet<Person>();
         for (Person p1 : a
-             ) {
+        ) {
             for (Person p2 : b
-                 ) {
-                if (p1.equals(p2)){
+            ) {
+                if (p1.equals(p2)) {
                     set.add(p1);
                 }
             }
@@ -41,8 +41,12 @@ public class Main {
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
             Person person = (Person) o;
             return Objects.equals(name, person.name);
         }
