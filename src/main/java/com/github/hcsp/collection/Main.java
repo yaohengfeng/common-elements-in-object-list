@@ -1,12 +1,21 @@
 package com.github.hcsp.collection;
 
+
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
 public class Main {
     // 请编写一个方法，获得a和b集合中的公共元素。
-    public static Set<Person> commonElementsIn(List<Person> a, List<Person> b) {}
+    public static Set<Person> commonElementsIn(List<Person> a, List<Person> b) {
+
+        HashSet<Person> res = new HashSet<>(a);
+        res.retainAll(b);
+
+        return res;
+
+
+    }
 
     // Person类，如果两个Person对象的name相等，则认为这两个对象相等。
     public static class Person {
@@ -22,6 +31,33 @@ public class Main {
 
         public void setName(String name) {
             this.name = name;
+        }
+
+        /*
+        * instanceof 是一个运算符， 用于判断一个对象是不是属于一个类 当左边是右边的一个对象时 返回true ；
+        * if在这是用于判断你传入的对象是否是Person类的对象，如果不是就不用运行下面的代码，不是同一类对象无法比较！
+        * 如果不判断，当其他类对象时，编译不会报错，运行会出错ClassCastException ，因为不是Persion类,(Person)obj，向下转型失败
+         * */
+        @Override
+        public boolean equals(Object obj) {
+            if (obj == null){
+                return false;
+            }else if (obj instanceof Person){
+                return this.name.equals(((Person) obj).name);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return name.hashCode();
+        }
+
+        @Override
+        public String toString() {
+            return "Person{" +
+                    "name='" + name + '\'' +
+                    '}';
         }
     }
 
