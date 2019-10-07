@@ -12,7 +12,7 @@ public class Main {
         Set<Person> sameNamePerson = new HashSet<>();
         for (Person personA : a) {
             for (Person personB : b) {
-                if (personB.getName().equals(personA.getName())) {
+                if (personB.equals(personA)) {
                     sameNamePerson.add(personB);
                 }
             }
