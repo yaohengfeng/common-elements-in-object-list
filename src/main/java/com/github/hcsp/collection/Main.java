@@ -8,7 +8,9 @@ public class Main {
         Set<Person> personSet = new HashSet<>();
         for (Person person :
                 a) {
-            if(b.contains(person)){personSet.add(person);}
+            if (b.contains(person)) {
+                personSet.add(person);
+            }
         }
         return personSet;
     }
