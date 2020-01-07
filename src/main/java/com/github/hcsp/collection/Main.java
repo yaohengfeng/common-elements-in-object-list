@@ -9,7 +9,7 @@ public class Main {
         ArrayList<Person> personsOne = new ArrayList<>(a);
         ArrayList<Person> personsTwo = new ArrayList<>(b);
         personsOne.retainAll(personsTwo);
-        return new HashSet<Person>(personsOne);
+        return new HashSet<>(personsOne);
     }
 
     // Person类，如果两个Person对象的name相等，则认为这两个对象相等。
