@@ -26,9 +26,10 @@ public class Main {
         public void setName(String name) {
             this.name = name;
         }
+
         @Override
         public boolean equals(Object obj) {
-            if(obj instanceof Person) {
+            if (obj instanceof Person) {
                 Person person = (Person) obj;
                 return this.getName().equals(person.getName());
             }
@@ -37,7 +38,7 @@ public class Main {
 
         @Override
         public int hashCode() {
-            return name !=null ? name.hashCode():0;
+            return name != null ? name.hashCode() : 0;
         }
     }
 
