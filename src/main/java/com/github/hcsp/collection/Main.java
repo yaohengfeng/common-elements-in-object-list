@@ -36,9 +36,10 @@ public class Main {
             return false;
         }
 
+
         @Override
         public int hashCode() {
-            return name.hashCode();
+            return Objects.hash(name);
         }
     }
 
